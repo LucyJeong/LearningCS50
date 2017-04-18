@@ -1,6 +1,7 @@
 # Week 8 - Python [📹](https://youtu.be/5aP9Bl9hcqI)
 
 ## Note
+![note](/Week8/note_week8.jpg)
 
 ## Voca
 - so to speak : 말하자면

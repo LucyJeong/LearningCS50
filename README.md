@@ -10,7 +10,7 @@ CS50은 사전 프로그래밍 경험이 있건 없건간에 concentrators와 no
 
 # Weeks
 - Week 0 - Scratch 
-- Week 1 - C 
+- [Week 1 - C](https://github.com/LucyJeong/LearningCS50/tree/master/Week1) 
 - Week 2 - Arrays 
 - Week 3 - Algorithms 
 - Week 4 - Memory 
@@ -19,5 +19,5 @@ CS50은 사전 프로그래밍 경험이 있건 없건간에 concentrators와 no
 - Week 7 - Machine Learning 
 - [Week 8 - Python](https://github.com/LucyJeong/LearningCS50/tree/master/Week8)
 
-## Blog
+# Blog
 - [I'm learning CS50](http://deeplucying.com/devdiary/im-learning-cs50/)
