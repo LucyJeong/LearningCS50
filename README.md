@@ -17,7 +17,7 @@ CS50은 사전 프로그래밍 경험이 있건 없건간에 concentrators와 no
 - Week 5 - Data Structures 
 - Week 6 - HTTP 
 - Week 7 - Machine Learning 
-- [Week 8 - Python]()
+- [Week 8 - Python](https://github.com/LucyJeong/LearningCS50/tree/master/Week8)
 
 ## Blog
 - [I'm learning CS50](http://deeplucying.com/devdiary/im-learning-cs50/)
