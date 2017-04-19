@@ -16,7 +16,7 @@ CS50은 사전 프로그래밍 경험이 있건 없건간에 concentrators와 no
 - [Week 4 - Memory](/Week4)
 - [Week 5 - Data Structures](/Week5)
 - [Week 6 - HTTP](/Week6)
-- Week 7 - Machine Learning
+- [Week 7 - Machine Learning](/Week7)
 - [Week 8 - Python](/Week8)
 - [Week 9 - SQL](/Week9)
 - [Week 10 - JavaScript](/Week10)
