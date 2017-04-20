@@ -24,7 +24,7 @@
 ## etc
 - [jQuery](https://jquery.com/): 자바스크립트의 생산성을 향상시켜주는 자바스크립트 라이브러리
 - [Puzzles Example](http://nifty.stanford.edu/2011/parlante-image-puzzle/)
-  - 2) Copper Image Puzzle
+  - Copper Image Puzzle
 
   ```
   var im = new SimpleImage("copper-puzzle.png");
@@ -35,6 +35,25 @@
       im.setRed(x,y,0)
       im.setBlue(x,y, blue * 20)
       im.setGreen(x,y, green * 20)
+
+    }
+  }
+  print(im);
+  ```
+  - West Image Puzzle
+
+  ```
+  var im = new SimpleImage("west-puzzle.png");
+  for (var x = 0; x < im.getWidth(); x++) {
+    for (var y = 0; y < im.getHeight(); y++) {
+
+    im.setRed(x,y,0)
+    im.setGreen(x,y,0)
+    var blue = im.getBlue(x,y)
+    if (blue < 16) {
+       im.setBlue(x,y, blue * 16)
+       im.setRed(x,y, blue * 16 )
+    }
 
     }
   }
