@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>storage</title>
+</head>
+<body>
+  <script>
+    if (!localStorage.getItem('counter')) {
+      localStorage.setItem('counter', 0);
+    }
+    document.write(localStorage.getItem('counter'));
+    localStorage.setItem('counter', parseInt(localStorage.getItem('counter')) + 1);
+  </script>
+</body>
+</html>
