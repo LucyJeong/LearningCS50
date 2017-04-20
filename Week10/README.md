@@ -22,3 +22,21 @@
 - glance : 흘끗 보다, 곁눈질
 
 ## etc
+- [jQuery](https://jquery.com/): 자바스크립트의 생산성을 향상시켜주는 자바스크립트 라이브러리
+- [Puzzles Example](http://nifty.stanford.edu/2011/parlante-image-puzzle/)
+  - 2) Copper Image Puzzle
+
+  ```
+  var im = new SimpleImage("copper-puzzle.png");
+  for (x = 0; x < im.getWidth(); x++) {
+    for (y = 0; y < im.getHeight(); y++) {
+      var blue = im.getBlue(x,y)
+      var green = im.getGreen(x,y)
+      im.setRed(x,y,0)
+      im.setBlue(x,y, blue * 20)
+      im.setGreen(x,y, green * 20)
+
+    }
+  }
+  print(im);
+  ```
