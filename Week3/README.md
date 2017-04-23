@@ -2,6 +2,7 @@
 
 ## Note
 ![note](/Week3/note_week3_0.jpg)
+
 ![note](/Week3/note_week3_1.jpg)
 
 ## Voca
@@ -22,7 +23,7 @@
 - claim : 주장하다, 요구하다
 
 ## etc
-- Binary Search[📹](https://youtu.be/5xlIPT1FRcA)
+- **Binary Search**[📹](https://youtu.be/5xlIPT1FRcA)
   - **미리 정렬된 자료** 를 대상으로 검색 범위를 반으로 감소시키는 과정을 반복해서 검색키를 찾는다.
   - 왼쪽에는 작은 값을, 오른쪽에는 큰값을 위치시킨다.
   - Pseudo Code
@@ -35,4 +36,60 @@
   - 최악의 시나리오 : 타겟 요소가 분할의 마지막에서 찾거나 혹은 배열안에 존재하지 않을 때에도, we have to divide a list of n elements in half repeatedly to find the target element. -> O(log n)
   - Best-case scenario : 전체 배열에서 타켓이 가운데에 위치해있을 경우 -> Ω(1)
   - binary search is a lot better that linear search but you have to deal with the process of sorting your array first before you can leverage the power of binary search.
-- 
+
+``` c
+//순환으로 구현
+int binarySearchRecursive(int value[], int start, int end, int key)
+{
+  int ret = FAIL;
+  int middle = 0;
+  //검색 데이터가 유효하다면 로직을 수행
+  if (start <= end) {
+    middle = (start + end) / 2;
+    if (key == value[middle]) {
+      ret = middle;
+    }
+    else if (key < value[middle]) {
+      ret = binarySearchRecursive(value, start, middle -1, key);
+    }
+    else {
+      ret = binarySearchRecursive(value, middle + 1, end, key);
+    }
+  }
+  return ret;
+}
+```
+- **BubbleSort**[📹](https://youtu.be/Ui97-_n5xjo)
+  - the idea of the Algorithm is to move higher valued elements generally towards the right and lower value elements generally towards the left.
+  - In Pseudocode:
+    - Set swap counter to a non-zero value
+    - Repeat until the swap counter is 0:
+      - Reset swap counter to 0
+      - Look at each adjacent pair
+        - if two adjacent elements are not in order, swap them and add one to the swap counter
+  - 최고의 시나리오 : 완전 정렬 되었을 경우 O(0) = 0, Ω(1)
+  - 평균 및 최악 : 역순으로 정렬되었을 경우 모두 n(n-1)/2회 실시하게 됨 -> O(n^2)
+  - 버블 솔트는 그렇게 빠른 정렬 알고리즘은 아니다.
+```swift
+var array = [5,3,4,6,8,2,9,1,7,10,11]
+var sortedArray = NSMutableArray(array: array)
+var sortedAboveIndex = array.count
+var swapCounter = 0
+
+repeat {
+  var lastSwapIndex = 0
+
+  for i in 1..<sortedAboveIndex {
+    if (sortedArray[i - 1] as! Int) > (sortedArray[i] as! Int) {
+      sortedArray.exchangeObject(at: i, withObjectAt: i-1)
+      lastSwapIndex = i
+      swapCounter += 1
+    }
+  }
+
+  sortedAboveIndex = lastSwapIndex
+
+} while (sortedAboveIndex != 0)
+```
+
+- [코딩도장](http://codingdojang.com/) : 여러 문제를 풀어볼 수 있는 곳
