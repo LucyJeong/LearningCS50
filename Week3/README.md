@@ -93,6 +93,7 @@ repeat {
 ```
 
 - **Computational Complexity**[📹](https://youtu.be/IM9sHGlYV5A)
+
 ![complexity](/Week3/complexity0.jpg)
   - O(1) : a constant time algorithm  
 
@@ -131,14 +132,73 @@ for (int j=0; j<p, j++){
     - call the first element of the array "sort"
     - repeat until all element are sorted:
       - look at the next unsorted element. Insert into the "sorted" portion by shifting the requisite number of elements.
-    - worst case: running time is O(n^2)
+    - worst case : running time is O(n^2)
     - best case : running time is Ω(n)
-    
-    **4** 2 6 8 1 3 7 5
-    **2 4** 6 8 1 3 7 5
-    **1 2 4** 6 8 3 7 5
-    **1 2 3 4 6** 8 7 5
-    **1 2 3 4 5 6 8** 7
-    **1 2 3 4 5 6 7 8**
+
+- **Linear Search**[📹](https://youtu.be/vZWfKBdSgXI)
+  - 처음부터 시작해서 타겟을 찾을때까지 계속 진행
+  - worst case : 타겟이 맨 마지막에 위치해 있을 경우 O(n)
+  - best case : 타겟이 맨 처음에 위치해 있을 경우 Ω(1)
+
+- **Merge Sort**[📹](https://youtu.be/sWtYJv_YXbo)
+  - In pseudocode :
+    on input of n elements
+        if n < 2
+            return
+        else
+            sort left half of elements
+            sort right half of elements
+            merge sorted halves
+  - Merge sort leverages something called **recursion**
+  - worst & best case : O(nlogn)
+  - Merge sort is got a very fundamental different from selection sort, bubble sort, insertion sort,. it's really clever and powerful.
+
+```swift
+func mergeSort(_ array: [Int]) -> [Int] {
+    guard array.count > 1 else { return array }
+    let middleIndex = array.count / 2
+    let leftArray = mergeSort(Array(array[0..<middleIndex]))
+    let rightArray = mergeSort(Array(array[middleIndex..<array.count]))
+    return merge(leftPile: leftArray, rightPile: rightArray)
+}
+
+func merge(leftPile:[Int], rightPile:[Int]) -> [Int] {
+    var leftIndex = 0
+    var rightIndex = 0
+
+    var orderedPile = [Int]()
+
+    while leftIndex < leftPile.count && rightIndex < rightPile.count {
+
+        if leftPile[leftIndex] < rightPile[rightIndex] {
+            orderedPile.append(leftPile[leftIndex])
+            leftIndex += 1
+        }
+        else if leftPile[leftIndex] > rightPile[rightIndex] {
+            orderedPile.append(rightPile[rightIndex])
+            rightIndex += 1
+        }
+        else {
+            orderedPile.append(leftPile[leftIndex])
+            leftIndex += 1
+            orderedPile.append(rightPile[rightIndex])
+            rightIndex += 1
+        }
+    }
+
+    while leftIndex < leftPile.count  {
+        orderedPile.append(leftPile[leftIndex])
+        leftIndex += 1
+    }
+    while rightIndex < rightPile.count {
+        orderedPile.append(rightPile[rightIndex])
+        rightIndex += 1
+    }
+    print(orderedPile)
+    return orderedPile
+
+}
+```
+
 
 - [코딩도장](http://codingdojang.com/) : 여러 문제를 풀어볼 수 있는 곳
