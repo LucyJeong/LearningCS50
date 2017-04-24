@@ -92,4 +92,53 @@ repeat {
 } while (sortedAboveIndex != 0)
 ```
 
+- **Computational Complexity**[📹](https://youtu.be/IM9sHGlYV5A)
+![complexity](/Week3/complexity0.jpg)
+  - O(1) : a constant time algorithm  
+
+```swift
+func forForyou(a: Int) {
+  return 4
+}
+func addTwoNums(a:Int, b:Int){
+  return a+b
+}
+```
+
+  - O(n) : linear time
+    - Alway takes n operations in the worst case.
+    - what's runtime?
+
+```c
+for (int j=0; j<m, j++){
+  //loop body that run in O(1)
+  //worst case is O(m)
+}
+
+for (int j=0; j<p, j++){
+  for (int k=0; k<p; k++){
+    //loop body that run in O(1)  
+    //worst case is O(p^2)
+  }
+}
+```
+  - 시간 복잡도 표현(Notation)
+    - Big O : 실행 시간 상한 표현 (가장 많이 쓰임) -> 최악의 시간 계산
+    - Ω : 실행 시간 하한 표현 -> 운좋을때 걸리는시간
+    - Θ : 실행 시간 평균 표현
+- **Insertion sort**[📹](https://youtu.be/TwGb6ohsvUU)
+  - In pseudocode:
+    - call the first element of the array "sort"
+    - repeat until all element are sorted:
+      - look at the next unsorted element. Insert into the "sorted" portion by shifting the requisite number of elements.
+    - worst case: running time is O(n^2)
+    - best case : running time is Ω(n)
+    
+    **4** 2 6 8 1 3 7 5
+    **2 4** 6 8 1 3 7 5
+    **1 2 4** 6 8 3 7 5
+    **1 2 3 4 6** 8 7 5
+    **1 2 3 4 5 6 8** 7
+    **1 2 3 4 5 6 7 8**
+
 - [코딩도장](http://codingdojang.com/) : 여러 문제를 풀어볼 수 있는 곳
