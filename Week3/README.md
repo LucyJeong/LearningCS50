@@ -94,7 +94,7 @@ repeat {
 
 - **Computational Complexity**[📹](https://youtu.be/IM9sHGlYV5A)
 
-![complexity](/Week3/complexity0.jpg)
+![complexity](/Week3/complexity0.png)
   - O(1) : a constant time algorithm  
 
 ```swift
@@ -200,5 +200,31 @@ func merge(leftPile:[Int], rightPile:[Int]) -> [Int] {
 }
 ```
 
+- **Selection Sort**[📹](https://youtu.be/lx9G71uLXIg)
+  - for i from 0 to n-1
+    find smallest element between i'th and n-1'th
+    swap smallest with i'th element
+  - worst & best case : O(n^2)
+```swift
+func selectionSort(_ array: [Int]) -> [Int] {
+  guard array.count > 1 else { return array }
+  var a = array                   
+
+  for x in 0 ..< a.count - 1 {   
+
+    var lowest = x
+    for y in x + 1 ..< a.count {   
+      if a[y] < a[lowest] {
+        lowest = y
+      }
+    }
+
+    if x != lowest {               
+      swap(&a[x], &a[lowest])
+    }
+  }
+  return a
+}
+```
 
 - [코딩도장](http://codingdojang.com/) : 여러 문제를 풀어볼 수 있는 곳
