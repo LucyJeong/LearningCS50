@@ -75,4 +75,34 @@
   - 디큐(De-Queue): 큐에서 자료를 꺼내는 것
   - 큐의 크기가 3인데 4번째 자료를 추가하려고 하면 넘침(overflow) 현상이 발생하여 추가될 수 없다.
   - 공백상태에서 디큐 연산이 호출되면 부족(underflow)현상이 발생했다고 한다.
-  - Peek : De-Queue와 비슷하지만, 제거하지 않고 그냥 반환한다. 
+  - Peek : De-Queue와 비슷하지만, 제거하지 않고 그냥 반환한다.
+- **Hash Table**
+  - Hash table allows you to store and retrieve objects by a "key".
+  - Hash Table combine the random access ability of an **array** with the dynamism of a **linked list**.
+  - All these operations take a constant amount of time, so inserting, retrieving, and removing are all O(1).
+  - A common way to handle collisions is to use chaining. The array looks as follows:
+  ```
+  buckets:
+	+-----+
+	|  0  |
+	+-----+     +----------------------------+
+	|  1  |---> | hobbies: Programming Swift |
+	+-----+     +----------------------------+
+	|  2  |
+	+-----+     +------------------+     +----------------+
+	|  3  |---> | firstName: Steve |---> | lastName: Jobs |
+	+-----+     +------------------+     +----------------+
+	|  4  |
+	+-----+
+  ```
+  - With chaining, keys and their values are not stored directly in the array. Instead, each array element is a list of zero or more key/value pairs. The array elements are usually called the buckets and the lists are called the chains. Here we have 5 buckets, and two of these buckets have chains. The other three buckets are empty.
+  - Insertions can start to tend toward Θ(1)
+  - Deletion can start to tend toward Θ(1)
+  - Lookup can start to tend toward Θ(1)
+  - A hash table amounts to a combination of two thing with which we're quite familiar.
+    - 1) a **hash function**, which return an nonnegative integer value called a _hash code_.
+    - 2) an **array** capable of storing data of the type we with to place into the data structure.
+  - a collision occurs when two pieces of data, when run through the hash function, yield the same hash code.
+  - Resolving collisions: Linear probing
+  - Linear probing is subject to a problem called **clustering**. Once there's a miss, two adjacent cells will contain data, making it more likely in the future that the cluster will grow.
+  - Resolving collisions: **Chaining**

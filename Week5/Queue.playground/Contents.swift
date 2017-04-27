@@ -31,6 +31,8 @@ public struct Queue<T> {
             array.removeFirst(head)
             head = 0
         }
+        //This calculates the percentage of empty spots at the beginning as a ratio of the total array size. If more than 25% of the array is unused, we chop off that wasted space. However, if the array is small we do not resize it all the time, so there must be at least 50 elements in the array before we try to trim it.
+        
         return element
     }
     
