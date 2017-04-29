@@ -106,3 +106,24 @@
   - Resolving collisions: Linear probing
   - Linear probing is subject to a problem called **clustering**. Once there's a miss, two adjacent cells will contain data, making it more likely in the future that the cluster will grow.
   - Resolving collisions: **Chaining**
+- **Tries** [📹](https://youtu.be/TRg9DQFu0kU)
+  - Tires combine structures and pointers together to store data in an interesting way.
+  - 현실 세계에 있는 나무와 비슷하다. 땅에 뿌리를 두고 하늘에 가지와 잎을 가지는 나무처럼, 자료구조의 트리는 하늘에 뿌리를 가지고 아래로 나무와 잎을 펼친다.
+![트리](https://github.com/raywenderlich/swift-algorithm-club/raw/master/Tree/Images/Tree.png)
+  - 트리는 계층 구조를 지니는 시스템을 표현하는 자료구조로 유용하게 사용됨
+  ```swift
+  public class TreeNode<T> {
+    public var value: T
+    public weak var parent: TreeNode?
+    public var children = [TreeNode<T>]()
+
+    public init(value:T){
+      self.value = value
+    }
+
+    public func addChild(_ node: TreeNode<T>) {
+      children.append(node)
+      node.parent = self 
+    }
+  }
+  ```
